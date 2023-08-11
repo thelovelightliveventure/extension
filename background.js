@@ -37,4 +37,4 @@ chrome.action.onClicked.addListener(async (tab) => {
   } else if (nextState === "OFF") {
     location.reload;
   };
-});
+}});
