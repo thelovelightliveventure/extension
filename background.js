@@ -6,7 +6,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 const all = '*://*/*'
 const screenwords = document.querySelectorAll("p");
-var wlist = ["dog", "cats"]
+var wlist = ["dog", "cats"];
 
 chrome.action.onClicked.addListener(async (tab) => {
   if (tab.url.startsWith(all)) {
