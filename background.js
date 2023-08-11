@@ -5,7 +5,7 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 const all = '*://*/*'
-const screenwords = document.querySelectorAll("p");
+const screenwords = document.querySelectorAll('*');
 var wlist = ["dog", "cats"];
 
 chrome.action.onClicked.addListener(async (tab) => {
@@ -22,6 +22,7 @@ chrome.action.onClicked.addListener(async (tab) => {
     });
 
   if (nextState === "ON") {
+    /*
     // search for words in list
     var foundwords;
     var wcounter;
@@ -34,6 +35,14 @@ chrome.action.onClicked.addListener(async (tab) => {
         position.i = results;
         }
     };
+*/
+    for (let i = 0; i < screenwords.length; i++) {
+      for (let j = 0; j < wlist.length; j++) {
+        if (screenwords[i].innerHTML.includes(wlist[j]) {
+          screenwords[i].innerHTML = screenwords[i].innerHTML.replace(wlist[j], "***");
+        };
+    };
+    }
   } else if (nextState === "OFF") {
     location.reload;
   };
