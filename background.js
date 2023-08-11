@@ -4,6 +4,8 @@ chrome.runtime.onInstalled.addListener(() => {
   });
 });
 
+if (document !== undefined) {
+
 const all = '*://*/*'
 const screenwords = document.querySelectorAll('*');
 var wlist = ["dog", "cats"];
@@ -47,3 +49,6 @@ chrome.action.onClicked.addListener(async (tab) => {
     location.reload;
   };
 }});
+
+
+}
