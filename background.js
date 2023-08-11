@@ -38,7 +38,7 @@ chrome.action.onClicked.addListener(async (tab) => {
 */
     for (let i = 0; i < screenwords.length; i++) {
       for (let j = 0; j < wlist.length; j++) {
-        if (screenwords[i].innerHTML.includes(wlist[j]) {
+        if (screenwords[i].innerHTML.includes(wlist[j])) {
           screenwords[i].innerHTML = screenwords[i].innerHTML.replace(wlist[j], "***");
         };
     };
