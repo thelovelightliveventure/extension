@@ -23,7 +23,7 @@ chrome.action.onClicked.addListener(async (tab) => {
 
   if (nextState === "ON") {
     // search for words in list
-    for (var i === 0; i < screenwords.length; i++) {
+    for (var i = 0; i < screenwords.length; i++) {
       var results = screenwords.search(wlist[i]);
       if (results != -1) { // if words from list are found
         var foundwords === true; // set foundwords to true
