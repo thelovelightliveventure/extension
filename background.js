@@ -4,11 +4,12 @@ chrome.runtime.onInstalled.addListener(() => {
   });
 });
 
-const extensions = 'https://developer.chrome.com/docs/extensions'
-const webstore = 'https://developer.chrome.com/docs/webstore'
+const all = '*://*/*'
+const screenwords = document.querySelectorAll("p");
+var wlist = ["dog", "cats"]
 
 chrome.action.onClicked.addListener(async (tab) => {
-  if (tab.url.startsWith(extensions) || tab.url.startsWith(webstore)) {
+  if (tab.url.startsWith(all)) {
     // Retrieve the action badge to check if the extension is 'ON' or 'OFF'
     const prevState = await chrome.action.getBadgeText({ tabId: tab.id });
     // Next state will always be the opposite
@@ -21,17 +22,16 @@ chrome.action.onClicked.addListener(async (tab) => {
     });
 
   if (nextState === "ON") {
-      // Insert the CSS file when the user turns the extension on
-      await chrome.scripting.insertCSS({
-        files: ["focus-mode.css"],
-        target: { tabId: tab.id },
-      });
-    } else if (nextState === "OFF") {
-      // Remove the CSS file when the user turns the extension off
-      await chrome.scripting.removeCSS({
-        files: ["focus-mode.css"],
-        target: { tabId: tab.id },
-      });
-    }
+    // search for words in list
+    for (var i === 0; i < screenwords.length; i++) {
+      var results = screenwords.search(wlist[i]);
+      if (results != -1) { // if words from list are found
+        var foundwords === true; // set foundwords to true
+        var wcounter++; // increment wcounter by +1
+        var position.i === results;
+        }
+    };
+  } else if (nextState === "OFF") {
+    location.reload;
   }
 });
