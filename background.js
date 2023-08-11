@@ -26,9 +26,9 @@ chrome.action.onClicked.addListener(async (tab) => {
     for (var i = 0; i < screenwords.length; i++) {
       var results = screenwords.search(wlist[i]);
       if (results != -1) { // if words from list are found
-        var foundwords === true; // set foundwords to true
+        var foundwords = true; // set foundwords to true
         var wcounter++; // increment wcounter by +1
-        var position.i === results;
+        var position.i = results;
         }
     };
   } else if (nextState === "OFF") {
